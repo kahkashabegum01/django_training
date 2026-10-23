@@ -1,0 +1,144 @@
+
+.home-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    text-align: center;
+    padding-top: 60px;
+}
+
+.home-page h1 {
+    color: #1e3a8a;
+    font-size: 36px;
+}
+
+.home-page h2 {
+    color: #334155;
+}
+
+.home-page p {
+    color: #64748b;
+    font-size: 18px;
+}
+
+.home-page button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    margin: 10px;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.home-page button:hover {
+    background-color: #1d4ed8;
+}
+
+
+
+.signup-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    padding-top: 60px;
+}
+
+.signup-page h1 {
+    text-align: center;
+    color: #1e3a8a;
+}
+
+.signup-page form {
+    background-color: white;
+    width: 400px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.signup-page label {
+    display: block;
+    margin-bottom: 6px;
+    color: #334155;
+    font-weight: bold;
+}
+
+.signup-page input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.signup-page button {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px 0 0 0;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.signup-page button:hover {
+    background-color: #1d4ed8;
+}
+
+
+.success-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-box {
+    background-color: white;
+    width: 400px;
+    padding: 40px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(30, 64, 175, 0.15);
+}
+
+.success-box h1 {
+    color: #1e3a8a;
+}
+
+.success-box p {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.success-box button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.success-box button:hover {
+    background-color: #1d4ed8;
+}
+.success-box h1 {
+    display: block;
+    width: 100%;
+}
+
+.success-box p {
+    display: block;
+    width: 100%;
+}
+
+.success-box a {
+    display: block;
+    width: 100%;
+}

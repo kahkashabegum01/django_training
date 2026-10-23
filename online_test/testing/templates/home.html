@@ -1,0 +1,202 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+```
+<title>Online Testing System</title>
+
+<style>
+
+    /* ===== General ===== */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: linear-gradient(135deg, #667eea, #764ba2);
+
+        color: #222;
+    }
+
+
+    /* ===== Main Card ===== */
+
+    .home-container {
+        width: 90%;
+        max-width: 650px;
+
+        background: white;
+
+        padding: 55px 40px;
+
+        text-align: center;
+
+        border-radius: 25px;
+
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* ===== Main Heading ===== */
+
+    h1 {
+        font-size: 40px;
+        color: #5b5bd6;
+
+        margin-bottom: 15px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* ===== Subtitle ===== */
+
+    h2 {
+        font-size: 20px;
+        font-weight: normal;
+
+        color: #666;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* ===== Welcome Message ===== */
+
+    h3 {
+        display: inline-block;
+
+        padding: 10px 20px;
+
+        margin-bottom: 30px;
+
+        border-radius: 20px;
+
+        background: #f0f1ff;
+
+        color: #5b5bd6;
+
+        font-size: 17px;
+    }
+
+
+    /* ===== Buttons ===== */
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .button-container a {
+        text-decoration: none;
+    }
+
+    button {
+        min-width: 130px;
+
+        padding: 13px 30px;
+
+        border: none;
+        border-radius: 30px;
+
+        background: linear-gradient(135deg, #667eea, #764ba2);
+
+        color: white;
+
+        font-size: 16px;
+        font-weight: bold;
+
+        cursor: pointer;
+
+        box-shadow: 0 7px 18px rgba(102, 126, 234, 0.3);
+
+        transition: 0.3s ease;
+    }
+
+    button:hover {
+        transform: translateY(-4px);
+
+        box-shadow: 0 12px 25px rgba(102, 126, 234, 0.4);
+    }
+
+
+    /* ===== Mobile ===== */
+
+    @media (max-width: 600px) {
+
+        .home-container {
+            padding: 40px 25px;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        h2 {
+            font-size: 17px;
+        }
+
+        .button-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            width: 180px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body class="home-page">
+
+```
+<div class="home-container">
+
+    <h1>Online Testing System</h1>
+
+    <h2>Welcome to Online Testing System</h2>
+
+    {% if username %}
+
+        <h3>Welcome, {{ username }} 👋</h3>
+
+    {% endif %}
+
+    <div class="button-container">
+
+        <a href="{% url 'signup' %}">
+            <button type="button">Sign Up</button>
+        </a>
+
+        <a href="{% url 'login' %}">
+            <button type="button">Login</button>
+        </a>
+
+    </div>
+
+</div>
+```
+
+</body>
+
+</html>

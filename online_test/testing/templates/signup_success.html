@@ -1,0 +1,203 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+```
+<title>Signup Successful</title>
+
+<style>
+
+    /* ===== General ===== */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: linear-gradient(135deg, #667eea, #764ba2);
+
+        color: #222;
+    }
+
+
+    /* ===== Success Card ===== */
+
+    .success-box {
+        width: 90%;
+        max-width: 600px;
+
+        background: white;
+
+        padding: 50px 40px;
+
+        text-align: center;
+
+        border-radius: 25px;
+
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* ===== Heading ===== */
+
+    .success-box h1 {
+        color: #5b5bd6;
+
+        font-size: 32px;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* ===== Success Message ===== */
+
+    .success-box h2 {
+        font-size: 22px;
+
+        color: #333;
+
+        line-height: 1.5;
+
+        margin-bottom: 35px;
+    }
+
+
+    /* ===== Success Icon ===== */
+
+    .success-icon {
+        font-size: 60px;
+
+        margin-bottom: 15px;
+    }
+
+
+    /* ===== Buttons ===== */
+
+    .success-buttons {
+        display: flex;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .success-buttons a {
+        text-decoration: none;
+    }
+
+    button {
+        min-width: 130px;
+
+        padding: 13px 28px;
+
+        border: none;
+
+        border-radius: 30px;
+
+        background: linear-gradient(135deg, #667eea, #764ba2);
+
+        color: white;
+
+        font-size: 16px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        box-shadow: 0 7px 18px rgba(102, 126, 234, 0.3);
+
+        transition: 0.3s ease;
+    }
+
+    button:hover {
+        transform: translateY(-4px);
+
+        box-shadow: 0 12px 25px rgba(102, 126, 234, 0.4);
+    }
+
+
+    /* ===== Mobile ===== */
+
+    @media (max-width: 600px) {
+
+        .success-box {
+            padding: 40px 25px;
+        }
+
+        .success-box h1 {
+            font-size: 27px;
+        }
+
+        .success-box h2 {
+            font-size: 19px;
+        }
+
+        .success-buttons {
+            flex-direction: column;
+
+            align-items: center;
+        }
+
+        button {
+            width: 180px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="success-box">
+
+    <div class="success-icon">
+        🎉
+    </div>
+
+    <h1>Online Testing System</h1>
+
+    <h2>
+        Congratulations!<br>
+        User saved successfully.
+    </h2>
+
+    <div class="success-buttons">
+
+        <a href="{% url 'signup' %}">
+            <button type="button">
+                Sign Up
+            </button>
+        </a>
+
+        <a href="{% url 'login' %}">
+            <button type="button">
+                Login
+            </button>
+        </a>
+
+    </div>
+
+</div>
+```
+
+</body>
+
+</html>

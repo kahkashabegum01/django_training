@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+```
+<title>Django Test</title>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #eef2ff, #f8f9ff);
+        color: #222;
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+
+    /* ===== Main Container ===== */
+
+    .test-container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ===== Heading ===== */
+
+    h1 {
+        text-align: center;
+        color: #5b5bd6;
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #666;
+        font-size: 18px;
+        font-weight: normal;
+        margin-bottom: 35px;
+    }
+
+    /* ===== Question Card ===== */
+
+    .question {
+        background: #f7f8ff;
+        padding: 25px;
+        margin-bottom: 22px;
+        border-radius: 15px;
+        border-left: 5px solid #667eea;
+    }
+
+    .question-text {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 18px;
+        line-height: 1.5;
+    }
+
+    /* ===== Options ===== */
+
+    .option {
+        display: block;
+        padding: 12px 15px;
+        margin: 8px 0;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    .option:hover {
+        background: #eef0ff;
+        border-color: #667eea;
+        transform: translateX(3px);
+    }
+
+    .option input {
+        margin-right: 10px;
+        accent-color: #667eea;
+        cursor: pointer;
+    }
+
+    /* ===== Submit Button ===== */
+
+    button {
+        display: block;
+        margin: 30px auto 0;
+        padding: 14px 45px;
+        border: none;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 7px 18px rgba(102, 126, 234, 0.3);
+        transition: 0.3s ease;
+    }
+
+    button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    /* ===== Mobile ===== */
+
+    @media (max-width: 600px) {
+
+        body {
+            padding: 20px 12px;
+        }
+
+        .test-container {
+            padding: 25px 18px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        .question {
+            padding: 18px;
+        }
+
+        .question-text {
+            font-size: 16px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="test-container">
+
+    <h1>Django Test</h1>
+
+    <h2>🐍 5 MCQs • Test Your Django Knowledge</h2>
+
+    <form action="{% url 'submit_django_test' %}" method="POST">
+
+        {% csrf_token %}
+
+        {% for q in questions %}
+
+            <div class="question">
+
+                <p class="question-text">
+                    {{ forloop.counter }}. {{ q.question }}
+                </p>
+
+                <label class="option">
+                    <input type="radio"
+                           name="q{{ q.id }}"
+                           value="{{ q.option1 }}">
+                    {{ q.option1 }}
+                </label>
+
+                <label class="option">
+                    <input type="radio"
+                           name="q{{ q.id }}"
+                           value="{{ q.option2 }}">
+                    {{ q.option2 }}
+                </label>
+
+                <label class="option">
+                    <input type="radio"
+                           name="q{{ q.id }}"
+                           value="{{ q.option3 }}">
+                    {{ q.option3 }}
+                </label>
+
+                <label class="option">
+                    <input type="radio"
+                           name="q{{ q.id }}"
+                           value="{{ q.option4 }}">
+                    {{ q.option4 }}
+                </label>
+
+            </div>
+
+        {% endfor %}
+
+        <button type="submit">
+            Submit Test
+        </button>
+
+    </form>
+
+</div>
+```
+
+</body>
+
+</html>
