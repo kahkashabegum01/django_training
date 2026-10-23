@@ -1,0 +1,56 @@
+{% extends "master.html" %}
+{% block content %}
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - Phones</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .photo {
+            width: 250px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
+        .photo.large {
+            transform: scale(1.8);
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Mobile Phones</h1>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
+             class="photo" onclick="makeLarge(this)" alt="Phone 1">
+
+        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97"
+```
+
+{% endblock %}

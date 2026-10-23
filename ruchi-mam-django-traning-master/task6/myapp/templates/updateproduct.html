@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="{% url 'update' %}" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="id" value="{{ product.id }}" />
+      <div>
+        <label for="pid">product id</label>
+      </div>
+      <div>
+        <input
+          type="number"
+          name="pid"
+          id="pid"
+          value="{{ product.pid }}"
+          required
+        />
+      </div>
+      <div>
+        <label for="pname">product name</label>
+      </div>
+      <div>
+        <input
+          type="text"
+          name="pname"
+          id="pname"
+          value="{{ product.pname }}"
+          required
+        />
+      </div>
+      <div>
+        <label for="prize">product price</label>
+      </div>
+      <div>
+        <input
+          type="number"
+          step="any"
+          name="prize"
+          id="prize"
+          value="{{ product.prize }}"
+          required
+        />
+      </div>
+      <div>
+        <label for="offer">product offer</label>
+      </div>
+      <div>
+        <input
+          type="number"
+          step="any"
+          name="offer"
+          id="offer"
+          value="{{ product.offer }}"
+          required
+        />
+      </div>
+      <div>
+        <input type="submit" value="update" />
+      </div>
+    </form>
+  </body>
+</html>

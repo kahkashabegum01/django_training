@@ -1,0 +1,72 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glass Prediction</title>
+    <link rel="stylesheet" href="{% static 'mlapp/style.css' %}" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="container">
+        <h1>Glass Prediction</h1>
+
+        {% if error %}
+        <p class="error-message">{{ error }}</p>
+        {% endif %}
+
+        <form action="{% url 'result' %}" method="post" class="form-box">
+          {% csrf_token %}
+
+          <div class="field-row">
+            <label for="RI">RI</label>
+            <input type="text" id="RI" required name="RI" />
+          </div>
+
+          <div class="field-row">
+            <label for="Na">Na</label>
+            <input type="text" id="Na" required name="Na" />
+          </div>
+
+          <div class="field-row">
+            <label for="Mg">Mg</label>
+            <input type="text" id="Mg" required name="Mg" />
+          </div>
+
+          <div class="field-row">
+            <label for="Al">Al</label>
+            <input type="text" id="Al" required name="Al" />
+          </div>
+
+          <div class="field-row">
+            <label for="Si">Si</label>
+            <input type="text" id="Si" required name="Si" />
+          </div>
+
+          <div class="field-row">
+            <label for="K">K</label>
+            <input type="text" id="K" required name="K" />
+          </div>
+
+          <div class="field-row">
+            <label for="Ca">Ca</label>
+            <input type="text" id="Ca" required name="Ca" />
+          </div>
+
+          <div class="field-row">
+            <label for="Ba">Ba</label>
+            <input type="text" id="Ba" required name="Ba" />
+          </div>
+
+          <div class="field-row">
+            <label for="Fe">Fe</label>
+            <input type="text" id="Fe" required name="Fe" />
+          </div>
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

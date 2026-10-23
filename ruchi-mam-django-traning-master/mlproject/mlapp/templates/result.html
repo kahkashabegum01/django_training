@@ -1,0 +1,32 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{% static 'mlapp/style.css' %}" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="container result-box">
+        <h1>Prediction Result</h1>
+        <div>
+          <h2>Entered values: {{ lis }}</h2>
+        </div>
+        <div>
+          <h2>The result is: {{ ans }}</h2>
+        </div>
+        <p>
+          Type of glass: (class attribute)
+          <br />-- 1 building_windows_float_processed <br />-- 2
+          building_windows_non_float_processed <br />-- 3
+          vehicle_windows_float_processed <br />-- 4
+          vehicle_windows_non_float_processed (none in this database) <br />-- 5
+          containers <br />-- 6 tableware <br />-- 7 headlamps
+        </p>
+        <a href="{% url 'home' %}">Go back</a>
+      </div>
+    </div>
+  </body>
+</html>

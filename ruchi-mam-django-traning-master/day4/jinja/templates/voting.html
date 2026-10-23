@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election</title>
+</head>
+<body>
+    <h1>Election</h1>
+    <div>
+        {% if age >= 18 %}
+            <h2>{{ country }}, {{ name }}</h2>
+        {% else %}
+            <h2>You are not eligible to vote</h2>
+        {% endif %}
+    </div>
+</body>
+</html>

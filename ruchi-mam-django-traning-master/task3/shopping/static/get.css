@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #dd1616;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+.shopping-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.shop {
+    background-color: white;
+    width: 280px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.shop img {
+    width: 250px;
+    height: 180px;
+    object-fit: contain;
+}
+
+.shop button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2874f0;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.shop button:hover {
+    background-color: #1557c0;
+}

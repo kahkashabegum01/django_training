@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Paper</title>
+    <link rel="stylesheet" href="{% static 'mycss.css' %}">
+</head>
+<body>
+    <div>
+        <h2>{{ que }}</h2>
+    </div>
+    <div>
+        <div><label><input type="radio" name="answer" value="a"> {{ a }}</label></div>
+        <div><label><input type="radio" name="answer" value="b"> {{ b }}</label></div>
+        <div><label><input type="radio" name="answer" value="c"> {{ c }}</label></div>
+        <div><label><input type="radio" name="answer" value="d"> {{ d }}</label></div>
+    </div>
+    <div>
+        <img src="{% static 'images.png' %}">
+    </div>
+    <div>
+        <video src="https://in.pinterest.com/pin/28147566418858861/" controls width="640" height="360">
+  Your browser does not support the video tag.
+</video>
+    </div>
+</body>
+</html>

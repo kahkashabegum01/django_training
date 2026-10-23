@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="{% url 'create' %}" method="post">
+      {% csrf_token %}
+      <div>
+        <label for="pid">product id</label>
+      </div>
+      <div>
+        <input type="number" name="pid" id="pid" required />
+      </div>
+      <div>
+        <label for="pname">product name</label>
+      </div>
+      <div>
+        <input type="text" name="pname" id="pname" required />
+      </div>
+      <div>
+        <label for="prize">product price</label>
+      </div>
+      <div>
+        <input type="number" step="any" name="prize" id="prize" required />
+      </div>
+      <div>
+        <label for="offer">product offer</label>
+      </div>
+      <div>
+        <input type="number" step="any" name="offer" id="offer" required />
+      </div>
+      <div>
+        <input type="submit" value="save" />
+      </div>
+    </form>
+  </body>
+</html>

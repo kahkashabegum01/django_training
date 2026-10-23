@@ -1,0 +1,84 @@
+{% extends "master.html" %}
+{% block content %}
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - Laptops</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+        }
+
+        h1 {
+            color: darkgreen;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .photo {
+            width: 250px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
+        .photo.large {
+            transform: scale(1.8);
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Laptops</h1>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
+             class="photo" onclick="makeLarge(this)" alt="Laptop 1">
+
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+             class="photo" onclick="makeLarge(this)" alt="Laptop 2">
+
+        <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6"
+             class="photo" onclick="makeLarge(this)" alt="Laptop 3">
+
+        <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef"
+             class="photo" onclick="makeLarge(this)" alt="Laptop 4">
+
+        <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed"
+             class="photo" onclick="makeLarge(this)" alt="Laptop 5">
+
+        <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1"
+             class="photo" onclick="makeLarge(this)" alt="Laptop 6">
+
+        <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2"
+             class="photo" onclick="makeLarge(this)" alt="Laptop 7">
+
+    </div>
+
+    <script>
+        function makeLarge(image) {
+            image.classList.toggle("large");
+        }
+    </script>
+
+</body>
+</html>
+```
+
+{% endblock %}
+```

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="{% url 'updateemployee','' %}" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="id" value="{{ employee.id }}" />
+      <div>
+        <label for="eno">employee number</label>
+      </div>
+      <div>
+        <input type="text" name="eno" id="eno" value="{{ employee.eno }}" />
+      </div>
+      <div>
+        <label for="ename">employee name</label>
+      </div>
+      <div>
+        <input
+          type="text"
+          name="ename"
+          id="ename"
+          value="{{ employee.ename }}"
+        />
+      </div>
+      <div>
+        <label for="esal">employee salary</label>
+      </div>
+      <div>
+        <input
+          type="text"
+          name="esal"
+          id="esalary"
+          value="{{ employee.esal }}"
+        />
+      </div>
+      <div>
+        <input type="submit" value="update" />
+      </div>
+    </form>
+  </body>
+</html>

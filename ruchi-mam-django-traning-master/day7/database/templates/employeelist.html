@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>employee list</title>
+  </head>
+  <body>
+    <div>
+      <h1>employee list</h1>
+      <table>
+        <tr>
+          <th>employeeid</th>
+          <th>employee number</th>
+          <th>employee name</th>
+          <th>employee salart</th>
+        </tr>
+        {% for i in employees %}
+        <tr>
+          <td>
+            <a href="{% url 'ateemployeeform' %}?id={{ i.id }}">{{ i.id }}</a>
+          </td>
+          <td>{{i.eno}}</td>
+          <td>{{i.ename}}</td>
+          <td>{{i.esal}}</td>
+          <td>
+            <form method="post" action="{% url 'deleteemployee' %}">
+              {% csrf_token %}
+              <input type="hidden" name="id" value="{{ i.id }}" />
+              <button type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Hub</title>
+
+    <link rel="stylesheet" href="{% static 'get.css' %}">
+</head>
+
+<body>
+
+    <h1>Shopping Hub</h1>
+
+    <div class="shopping-row">
+
+        <!-- Amazon -->
+        <div class="shop">
+            <img src="{% static 'amazon.jpeg' %}" alt="Amazon">
+            <button onclick="window.open('https://www.amazon.in', '_blank')">
+                Visit Amazon
+            </button>
+        </div>
+
+        <!-- Flipkart -->
+        <div class="shop">
+            <img src="{% static 'flipkart.png' %}"alt="Flipkart">
+            <button onclick="window.open('https://www.flipkart.com', '_blank')">
+                Visit Flipkart
+            </button>
+        </div>
+
+        <!-- Meesho -->
+        <div class="shop">
+            <img src="{% static 'meesho.png' %}" alt="Meesho">
+            <button onclick="window.open('https://www.meesho.com', '_blank')">
+                Visit Meesho
+            </button>
+        </div>
+
+    </div>
+    <div>
+         <video src="https://in.pinterest.com/pin/28147566418858861/" controls width="640" height="360">
+  Your browser does not support the video tag.
+    </div>
+
+</body>
+</html>

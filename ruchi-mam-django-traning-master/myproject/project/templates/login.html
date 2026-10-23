@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'project/style.css' %}" />
+    <title>Login | Student Pathway</title>
+  </head>
+  <body>
+    <main class="page-shell">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="brand" href="/">Student Pathway</a>
+        <div class="nav-links"><a href="/register/">Register</a></div>
+      </nav>
+      <section class="panel">
+        <p class="eyebrow">Welcome back</p>
+        <h1>Log in.</h1>
+        <p class="panel-intro">
+          Continue to your student prediction dashboard.
+        </p>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-field">
+            <label for="sid">Student ID</label
+            ><input id="sid" type="text" name="sid" required />
+          </div>
+          <div class="form-field">
+            <label for="password">Password</label
+            ><input id="password" type="password" name="password" required />
+          </div>
+          <input type="submit" value="Login" />
+        </form>
+        <p class="form-footer">
+          New here? <a href="/register/">Create an account</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

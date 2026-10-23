@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'project/style.css' %}" />
+    <title>Prediction | Student Pathway</title>
+  </head>
+  <body>
+    <main class="page-shell">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="brand" href="/">Student Pathway</a>
+        <div class="nav-links"><a href="/">Home</a></div>
+      </nav>
+      <div class="prediction-layout">
+        <section class="panel">
+          <p class="eyebrow">Your dashboard</p>
+          <h1>Check your readiness.</h1>
+          <p class="panel-intro">
+            Welcome{% if sname %}, {{ sname }}{% endif %}. Add your latest
+            scores to generate a prediction.
+          </p>
+          {% if error %}
+          <p class="error">{{ error }}</p>
+          {% endif %}
+          <form method="post" action="/prediction/">
+            {% csrf_token %}
+            <input type="hidden" name="sname" value="{{ sname }}" />
+            <div class="form-field">
+              <label for="iq">IQ score</label
+              ><input id="iq" type="number" step="any" name="iq" required />
+            </div>
+            <div class="form-field">
+              <label for="cgpa">CGPA</label
+              ><input id="cgpa" type="number" step="any" name="cgpa" required />
+            </div>
+            <input type="submit" value="Check result" />
+          </form>
+        </section>
+        {% if status %}
+        <section class="result" aria-live="polite">
+          <p class="eyebrow">Latest result</p>
+          <h2>{{ status }}</h2>
+          <div class="result-meta">
+            <span>IQ<strong>{{ iq }}</strong></span>
+            <span>CGPA<strong>{{ cgpa }}</strong></span>
+          </div>
+        </section>
+        {% endif %}
+      </div>
+      <a class="back-link" href="/">Back to home</a>
+    </main>
+  </body>
+</html>

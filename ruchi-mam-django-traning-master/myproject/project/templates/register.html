@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'project/style.css' %}" />
+    <title>Register | Student Pathway</title>
+  </head>
+  <body>
+    <main class="page-shell">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="brand" href="/">Student Pathway</a>
+        <div class="nav-links"><a href="/login/">Log in</a></div>
+      </nav>
+      <section class="panel">
+        <p class="eyebrow">Start here</p>
+        <h1>Build your profile.</h1>
+        <p class="panel-intro">
+          Enter your student details once, then return whenever you want to
+          check your placement readiness.
+        </p>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-field">
+            <label for="sid">Student ID</label
+            ><input id="sid" type="text" name="sid" required />
+          </div>
+          <div class="form-field">
+            <label for="sname">Name</label
+            ><input id="sname" type="text" name="sname" required />
+          </div>
+          <div class="form-field">
+            <label for="password">Password</label
+            ><input id="password" type="password" name="password" required />
+          </div>
+          <div class="form-field">
+            <label for="branch">Branch</label
+            ><input id="branch" type="text" name="branch" required />
+          </div>
+          <input type="submit" value="Register" />
+        </form>
+        <p class="form-footer">
+          Already registered? <a href="/login/">Go to login</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+{% extends "master.html" %}
+{% block content %}
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Information - Travelling</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: lightyellow;
+        }
+
+        h1 {
+            color: darkorange;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .photo {
+            width: 250px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
+        .photo.large {
+            transform: scale(1.8);
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Travelling</h1>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800"
+             class="photo" onclick="makeLarge(this)" alt="Travel 1">
+
+        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1"
+             class="photo" onclick="makeLarge(this)" alt="Travel 2">
+
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+             class="photo" onclick="makeLarge(this)" alt="Travel 3">
+
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828"
+             class="photo" onclick="makeLarge(this)" alt="Travel 4">
+
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+             class="photo" onclick="makeLarge(this)" alt="Travel 5">
+
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+             class="photo" onclick="makeLarge(this)" alt="Travel 6">
+
+        <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60"
+             class="photo" onclick="makeLarge(this)" alt="Travel 7">
+
+    </div>
+
+    <script>
+        function makeLarge(image) {
+            image.classList.toggle("large");
+        }
+    </script>
+
+</body>
+</html>
+```
+
+{% endblock %}
+```

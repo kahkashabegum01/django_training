@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'project/style.css' %}" />
+    <title>Student Pathway</title>
+  </head>
+  <body>
+    <main class="page-shell">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="brand" href="/">Student Pathway</a>
+        <div class="nav-links">
+          <a href="/login/">Log in</a>
+          <a href="/register/">Register</a>
+        </div>
+      </nav>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Placement readiness</p>
+          <h1>Turn your numbers into your next move.</h1>
+          <p class="lede">
+            Create a student profile, then use your IQ and CGPA to get a quick
+            placement prediction.
+          </p>
+          <div class="actions">
+            <a class="button" href="/register/">Create profile</a>
+            <a class="button secondary" href="/login/">View prediction</a>
+          </div>
+        </div>
+        <p class="hero-note">
+          A focused way to understand where your academic profile stands and
+          what to work on next.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

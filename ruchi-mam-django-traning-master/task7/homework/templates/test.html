@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ test_name }} - Assessment</title>
+    <link rel="stylesheet" href="{% static 'mycss.css' %}">
+</head>
+<body>
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+    <div class="ambient-glow-3"></div>
+
+    <div class="app-card test-container">
+        <div class="quiz-header">
+            <div>
+                <span class="badge-chip" style="margin-bottom: 0.4rem;">
+                    <span class="badge-dot"></span>
+                    Live Examination
+                </span>
+                <h2 style="text-align: left; margin: 0;">{{ test_name }}</h2>
+            </div>
+            <div class="quiz-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Select One Option per Question</span>
+            </div>
+        </div>
+
+        <form action="{% url 'result' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="test_id" value="{{ test_id }}">
+
+            {% for q in questions %}
+                <div class="question-card" style="animation-delay: calc({{ forloop.counter0 }} * 120ms);">
+                    <div class="question-title">
+                        <span class="q-badge">{{ forloop.counter }}</span>
+                        <span>{{ q.question }}</span>
+                    </div>
+
+                    <label class="option-label">
+                        <input type="radio" name="q_{{ q.id }}" value="{{ q.option1 }}" required>
+                        <span>{{ q.option1 }}</span>
+                    </label>
+
+                    <label class="option-label">
+                        <input type="radio" name="q_{{ q.id }}" value="{{ q.option2 }}">
+                        <span>{{ q.option2 }}</span>
+                    </label>
+
+                    <label class="option-label">
+                        <input type="radio" name="q_{{ q.id }}" value="{{ q.option3 }}">
+                        <span>{{ q.option3 }}</span>
+                    </label>
+
+                    <label class="option-label">
+                        <input type="radio" name="q_{{ q.id }}" value="{{ q.option4 }}">
+                        <span>{{ q.option4 }}</span>
+                    </label>
+                </div>
+            {% endfor %}
+
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <button type="submit" class="btn btn-primary submit-test-btn" style="width: 100%;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Finish & Submit Examination
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

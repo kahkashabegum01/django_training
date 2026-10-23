@@ -1,0 +1,31 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}\\workspace\\Scripts\\python.exe",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  "editor.snippetSuggestions": "inline",
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.diagnosticMode": "workspace",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  }
+}

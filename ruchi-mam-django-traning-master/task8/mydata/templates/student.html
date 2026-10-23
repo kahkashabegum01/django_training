@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration</title>
+  </head>
+  <body>
+    <h1>Register Student</h1>
+
+    {% if msg %}
+    <p>{{ msg }}</p>
+    {% endif %}
+
+    <form action="{% url 'savestudent' %}" method="post">
+      {% csrf_token %}
+      <div>
+        <label for="s_id">Student ID</label>
+      </div>
+      <div>
+        <input type="number" name="s_id" id="s_id" required />
+      </div>
+      <div>
+        <label for="sname">Student Name</label>
+      </div>
+      <div>
+        <input type="text" name="sname" id="sname" required />
+      </div>
+      <div>
+        <label for="sbranch">Student Branch</label>
+      </div>
+      <div>
+        <input type="text" name="sbranch" id="sbranch" required />
+      </div>
+      <div style="margin-top: 10px">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+
+    <div style="margin-top: 20px">
+      <a href="{% url 'home' %}"><button type="button">Home</button></a>
+      <a href="{% url 'studentform' %}"
+        ><button type="button">Add Another Student</button></a
+      >
+    </div>
+  </body>
+</html>
